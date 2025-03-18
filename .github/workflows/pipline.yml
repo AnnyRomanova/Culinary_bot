@@ -29,5 +29,5 @@ jobs:
             cd /home/${{ secrets.REMOTE_USER }}/app
             echo BOT_TOKEN=${{ secrets.BOT_TOKEN }} > .env
             sudo docker build -t culinary_bot .
-            sudo docker rmi $(sudo docker images -f "dangling=true" -q)
             sudo docker run -d --rm --name culinarybot culinary_bot
+            sudo docker rmi $(sudo docker images -f "dangling=true" -q)
