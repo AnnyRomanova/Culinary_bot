@@ -12,6 +12,5 @@ RUN apt update \
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
-ENV PYTHONPATH="${PYTHONPATH}:/opt/app"
-ENTRYPOINT ["python", "src/app.py"]
+COPY ./src .
+ENTRYPOINT ["python", "app.py"]

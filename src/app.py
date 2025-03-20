@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from pydantic_settings import BaseSettings
 from aiogram import Dispatcher, Bot, types
 
-from src.culinary import Culinary
+from culinary import Culinary
 
 
 # Настраиваем конфигурацию для бота
