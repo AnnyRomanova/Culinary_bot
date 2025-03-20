@@ -14,7 +14,7 @@ from culinary import Culinary
 # Настраиваем конфигурацию для бота
 # Подтягиваем данные из виртуального окружения
 class BotConfig(BaseSettings):
-    token: str
+    TOKEN: str
 
     class Config:
         env_file = ".env"
@@ -28,7 +28,7 @@ class CulinaryBot:
         # создаем диспетчер для обработки запросов
         self.dp = Dispatcher()
         # объект бота из библиотеки aiogram, передается в методы диспетчера
-        self.bot = Bot(config.token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+        self.bot = Bot(config.TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
         self.register_handlers()
 
     # метод регистрирует методы работы с ботом
